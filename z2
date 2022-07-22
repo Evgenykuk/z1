@@ -1,0 +1,13 @@
+f = open("17z2.txt")
+mas = []
+for x in f:
+    mas.append(int(x))
+k = 0
+maxsum = 0
+koren=int(max(mas) ** 0.5)
+for i in range(len(mas)-1):
+    if mas[i] > koren or mas[i+1] > koren:
+        if (mas[i] + mas[i+1]) % 7 == 0:
+            k += 1
+            maxsum = max(maxsum,mas[i] + mas[i+1])
+print(k, maxsum)
